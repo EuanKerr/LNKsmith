@@ -1,6 +1,6 @@
 """lnksmith -- build and parse Windows .lnk files (MS-SHLLINK)."""
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 from .builder import build_lnk, write_lnk
 from .parser import (
