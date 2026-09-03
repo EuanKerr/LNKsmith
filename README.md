@@ -157,24 +157,30 @@ lnksmith parse *.lnk
 from lnksmith import build_lnk, write_lnk, parse_lnk, format_lnk
 
 # Build and write a .lnk file
-write_lnk("notepad.lnk", target=r"C:\Windows\notepad.exe",
-           description="Notepad", working_dir=r"C:\Windows")
+write_lnk(
+    "notepad.lnk",
+    target=r"C:\Windows\notepad.exe",
+    description="Notepad",
+    working_dir=r"C:\Windows",
+)
 
 # Build to bytes (useful for sending over a network, embedding, etc.)
-data = build_lnk(target=r"C:\Windows\System32\cmd.exe",
-                 arguments="/k whoami", show_command=7)
+data = build_lnk(
+    target=r"C:\Windows\System32\cmd.exe", arguments="/k whoami", show_command=7
+)
 
 # Parse from a file path or raw bytes
 info = parse_lnk("notepad.lnk")
-print(info.target_path)       # C:\Windows\notepad.exe
-print(info.description)       # Notepad
-print(info.working_dir)       # C:\Windows
+print(info.target_path)  # C:\Windows\notepad.exe
+print(info.description)  # Notepad
+print(info.working_dir)  # C:\Windows
 
 # Human-readable dump
 print(format_lnk(info))
 
 # JSON-friendly dict
 from dataclasses import asdict
+
 print(asdict(info))
 ```
 
