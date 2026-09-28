@@ -13,7 +13,7 @@ repos:
       - id: check-merge-conflict
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: 321478e58f4938179c6b86e4ddfa923d1547a49b # v0.16.6
+    rev: a56c0b927e6465d37cae3e97d35d4d18ab2b96cd # v0.16.9
     hooks:
       - id: ruff
         args: [--fix]
